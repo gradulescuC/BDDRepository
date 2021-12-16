@@ -11,7 +11,7 @@ public class Environment {
 
     @Before
     public void setup(){
-        System.setProperty("webdriver.chrome.driver","/Users/gradulescu/Desktop/Personal/Diverse/automation/CursAutomatizare/BDD/webdrivers/chromedriver");
+        System.setProperty("webdriver.chrome.driver","/Users/gradulescu/Desktop/Personal/Diverse/automation/CursAutomatizare/BDDImplementation/BDDRepository/BDD/webdrivers/chromedriver");
         driver = new ChromeDriver();
     }
 
