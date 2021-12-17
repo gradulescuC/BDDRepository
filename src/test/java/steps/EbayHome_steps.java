@@ -5,13 +5,17 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+import java.util.List;
+
 import static org.junit.Assert.fail;
 
 public class EbayHome_steps {
 
-   WebDriver driver = new Environment().getDriver(); // serenity implementation needs an empty constructor in the step definition file
+    WebDriver driver = new Environment().getDriver(); // serenity implementation needs an empty constructor in the step definition file
 
-   public EbayHome_steps(){}
+    public EbayHome_steps(){}
 
     @Given("I am on ebay homepage")
     public void i_am_on_ebay_homepage() {
@@ -47,5 +51,19 @@ public class EbayHome_steps {
             fail("Less than 1000 items");
         }
     }
+
+  /*  @When("I search for {string} in {string} category")
+    public void i_search_for_category(String string, String string1)  {
+        driver.findElement(By.id("gh-ac")).sendKeys(string);
+        driver.findElement(By.xpath("//select[@id='gh-cat']")).click();
+        List<WebElement> cat = driver.findElements(By.xpath("//select[@id='gh-cat']/option"));
+        for(WebElement x: cat){
+            if(x.getText().trim().toLowerCase().equals(string1.toLowerCase())){
+                x.click();
+                break;
+            }
+        }
+        driver.findElement(By.xpath("//input[@id='gh-btn']")).click();
+    }*/
 
 }

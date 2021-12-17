@@ -16,13 +16,12 @@ import org.junit.runner.RunWith;
          // plugin = { "pretty", "json:Reports/cucumber-reports.json" } // format for the test report in json format
           // plugin = { "pretty", "junit:Reports/cucumber-reports.java" } // format for the test report in junit format
        // there can be three formats: HTML, json and junit.
-        dryRun = false, // true = will not run code but it will find out if there are scenarios or
+        dryRun = true, // true = will not run code but it will find out if there are scenarios or
                                     // steps that do not have step definitions
         monochrome = true // removes redundant information from the console result
-         , tags = "@P2" // running all the feature files having that specific tag
+          , tags = "@P1" // running all the feature files having that specific tag
         // name = "link" // runs the tests having that specific keyword in the scenario name
 )
 public class TestRunner {
-
 }
 

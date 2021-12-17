@@ -20,6 +20,7 @@ public class Environment {
         driver.quit();
         Thread.sleep(1000);
     }
+
     public static WebDriver getDriver(){
         return driver;
     }
