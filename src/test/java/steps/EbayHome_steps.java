@@ -34,9 +34,10 @@ public class EbayHome_steps {
     }
 
     @When("I search for {string}")
-    public void i_search_for_iphone(String str1) {
+    public void i_search_for_iphone(String str1) throws  Exception {
         driver.findElement(By.xpath("//input[@id='gh-ac']")).sendKeys(str1);
         driver.findElement(By.xpath("//input[@id='gh-btn']")).click();
+        Thread.sleep(1000);
     }
     @Then("I have at least {int} search items returned")
     public void i_have_at_least_search_items_returned(int count) {

@@ -17,3 +17,10 @@ Feature: Ebay Homepage Scenarios
    Given I am on ebay homepage
    When I search for 'Iphone 11'
    Then I have at least 1000 search items returned
+
+  @P3
+  Scenario: Search items count2
+
+    Given I am on ebay homepage
+    When I search for 'Toy Cars'
+    Then I have at least 100 search items returned

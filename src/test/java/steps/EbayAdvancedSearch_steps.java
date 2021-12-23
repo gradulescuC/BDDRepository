@@ -1,5 +1,6 @@
 package steps;
 
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -32,5 +33,16 @@ public class EbayAdvancedSearch_steps {
         if(!expURL.equals(actualURL)){
             fail("Logo does not navigate to homepage");
         }
+    }
+
+    @Given("I am on the advanced search page")
+    public void i_am_on_the_advanced_search_page() {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
+    }
+    @When("I advance search an item")
+    public void i_advance_search_an_item(DataTable dataTable) {
+
+        throw new io.cucumber.java.PendingException();
     }
 }
