@@ -1,28 +1,21 @@
-// the name of the file can be different, but by convention it is called TestRunner.
-
 package testRunner;
-
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
 
-@RunWith(Cucumber.class) // TestRunner will run with the cucumber class
+@RunWith(Cucumber.class)            //testRunner ruleaza cu clasa Cucumber
 @CucumberOptions(
-        features = {"features"}, // Specifies where to find the feature files
-        glue = {"steps"}, // Specifies where to find the step definitions
-        // plugin = {"pretty","html:Reports.html"} // format for the test report in HTML Format
-          plugin = {"pretty","html:Reports/cucumber-reports.html"}, // Same as the above, only that it is specified the folder name where the report will be generated
-                                                        // If the folder does not exist, it will be created automatically
-         // plugin = { "pretty", "json:Reports/cucumber-reports.json" } // format for the test report in json format
-          // plugin = { "pretty", "junit:Reports/cucumber-reports.java" } // format for the test report in junit format
-       // there can be three formats: HTML, json and junit.
-        dryRun = true, // true = will not run code but it will find out if there are scenarios or
-                                    // steps that do not have step definitions
-        monochrome = true // removes redundant information from the console result
-         , tags = "@P3" // running all the feature files having that specific tag
-        // name = "link" // runs the tests having that specific keyword in the scenario name
+        features = {"features"},   //numele folderului features, daca avea alta denumire, se scria denumirea respectiva
+        // aceasta instructiune specifica unde poate sistemul sa gaseasca folderul cu features files
+        glue = {"steps"},                            //aceasta instructiune specifica unde sa gasim fisierele de steps definition
+        //plugin = {"pretty", "html:reports.html"},   //aceasta instructiune specifica formatul raportului care se va genera (html) si numele raportului (reports.html), pretty - pt a fi aranjat frumos
+        plugin = {"pretty", "html:reports/reports.html"}, //aceasta instr. specifica formatul raportului impreuna cu folderul in care trebuie sa se genereze
+        // daca folderul nu exista, va fi creat automat
+        //plugin = {"pretty", "json:reports/reports.json"} //aceasta inst. genereaza raportul in formatul json
+        //plugin = {"pretty", "junit:reports/reports.junit"} //aceasta inst. genereaza raportul in formatul junit
+        dryRun = false, // daca este true, nu se va rula cod si se va verifica daca toate fisierele de features au un fisier corespondent de steps
+        monochrome = true //elimina info redundante din consola
+         ,tags = "@fb"      //ruleaza doar testele care sunt marcate cu tagul T1, se poate schimba in functie de ce dorim sa rulam
+        //,name = "count"     //aceasta inst. ruleaza testele care au acest keyword in numele scenariului
 )
-public class TestRunner {
-
-}
-
+public class TestRunner {}

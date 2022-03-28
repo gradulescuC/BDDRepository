@@ -8,7 +8,6 @@ Feature: Ebay Advanced Search Page
     Then I am navigated to Ebay homepage
 
   @P25
-
   Scenario: Advance search an item
     Given I am on the advanced search page
     When I advance search an item

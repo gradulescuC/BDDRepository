@@ -1,9 +1,7 @@
-
 Feature: Ebay Homepage Scenarios
 
  @P1 #This is a tag that can be used for running a set of tests having the same tag
 #        The name of the tag can be any given name (it doesn't have a specific syntax)
-
  Scenario: Advanced search link
 
 #   Given When And Then

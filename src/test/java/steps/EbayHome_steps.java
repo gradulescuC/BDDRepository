@@ -1,5 +1,4 @@
 package steps;
-import io.cucumber.java.af.En;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -9,17 +8,17 @@ import static org.junit.Assert.fail;
 
 public class EbayHome_steps {
 
-   WebDriver driver = new Environment().getDriver(); // serenity implementation needs an empty constructor in the step definition file
-
-   public EbayHome_steps(){}
+    WebDriver driver = new Environment().getDriver(); // serenity implementation needs an empty constructor in the step definition file
+    public EbayHome_steps(){}
 
     @Given("I am on ebay homepage")
-    public void i_am_on_ebay_homepage() {
+    public void i_am_on_ebay_homepage() throws InterruptedException {
         driver.get("https://www.ebay.com");
+        Thread.sleep(1000);
     }
 
     @When("I click on Advanced Link")
-    public void i_click_on_advanced_link()  {
+    public void i_click_on_advanced_link() throws InterruptedException {
         driver.findElement(By.linkText("Advanced")).click();
     }
 
@@ -27,8 +26,14 @@ public class EbayHome_steps {
     public void i_navigate_to_advanced_search_page() {
         String expURL = "https://www.ebay.com/sch/ebayadvsearch";
         String actURL = driver.getCurrentUrl();
-        if (!expURL.equals(actURL))
+       // String actURL = "https://www.ebay.com/sch/ebayadvsearch";
+//          assert expURL==actURL;
+         //if (!expURL.equals(actURL))
+        if (expURL.equals(actURL))
         {
+            System.out.println("Test has passed");
+        }
+        else {
             fail("Page does not navigate to expected page");
         }
     }
@@ -48,5 +53,4 @@ public class EbayHome_steps {
             fail("Less than 1000 items");
         }
     }
-
 }
